@@ -1,0 +1,2 @@
+/* shows the packages that have not been delivered yet and when they were picked up */
+select package_ID, date as 'pickup date' from package_incoming left join pickup on pickup_ID=fk_pickup_ID where package_ID not in (select fk_package_inc_ID as package_ID from package_outgoing)

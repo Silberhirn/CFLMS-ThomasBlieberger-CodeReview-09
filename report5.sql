@@ -1,0 +1,2 @@
+/* shows how many packages have been picked up between "2020-07-05" and "2020-07-09" */
+select count(package_incoming.package_ID) as PackageNr from package_incoming left join pickup on pickup_ID=fk_pickup_ID where `date` between "2020-07-05" and "2020-07-09"
